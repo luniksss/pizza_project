@@ -1,0 +1,43 @@
+index:
+    path: /
+    controller: App\Controller\UserController::index
+    methods: GET
+
+register_user:
+    path: /user/register
+    controller: App\Controller\UserController::registerUser
+    methods: POST
+
+view_assortment:
+    path: /assortment/{id}
+    controller: App\Controller\StorefrontController::index
+    methods: GET
+
+basket:
+    path: /basket
+    controller: App\Controller\OrderForm::index
+    methods: POST
+
+order:
+    path: /order
+    controller: App\Controller\OrderForm::placeOrder
+    methods: POST
+
+admin:
+    path: /admin
+    controller: App\Controller\StorefrontController::editCatalog
+    methods: GET
+
+add_form:
+    path: /admin/add
+    controller: App\Controller\AddPizzaController::index
+
+register_product:
+    path: /admin/register
+    controller: App\Controller\AddPizzaController::add
+    methods: POST
+
+delete_product:
+    path: /admin/delete
+    controller: App\Controller\StorefrontController::deleteProduct
+    methods: POST

@@ -1,0 +1,12 @@
+<form id="card" action="/basket" method="post">
+    <img class="card__photo" src="/uploads/{{ product.picture}}">
+    <p>{{ product.name}}</p>
+    <p class="card__description">{{ product.description}}</p>
+    <p>{{ product.price}}₽</p>
+    <input type="hidden" name="id" value="{{ user_id }}">
+    <input type="hidden" name="pizza_id" value="{{ product.id}}">
+    <input type="hidden" name="name" value="{{ product.name}}">
+    <input type="hidden" name="price" value="{{ product.price}}">
+    <input type="hidden" name="picture" value="{{ product.picture}}">
+    <button class="button">Order</button>
+</form>

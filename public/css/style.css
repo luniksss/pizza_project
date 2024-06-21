@@ -1,0 +1,224 @@
+body {
+    background-color:rgb(228, 134, 100);
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+.container 
+{
+    max-width: 1290px;
+    margin: 0 auto;
+}
+  
+.flex-wrapper 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-container 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#content
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.headlines
+{
+    text-align: center;
+    font-size: 64px;
+    color: antiquewhite;
+    margin-bottom: 30px;
+}
+
+input
+{
+    font-family: "Inter";
+}
+
+.input-form 
+{
+    margin-top: 10px;
+    background-color:bisque;
+    position: absolute;
+    max-width: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3% 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 5%;
+}
+
+.user-info
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.input-label
+{
+    font-size: 32px;
+}
+
+.input-data
+{
+    font-size: 24px;
+}
+
+.button
+{
+    background-color:coral;
+    width: 80%;
+    font-size: 24px;
+    color:aliceblue;
+    padding: 10px 0;
+    margin-top: 5%;
+    margin-left: 10%;
+    border-radius: 7%;
+    font-family: "Inter";
+}
+
+.menu
+{
+    display: flex;
+    justify-content: center;
+    margin: 1% 5%;
+}
+
+.cards
+{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2%;
+    gap: 20px;
+}
+
+#card
+{
+    background-color: burlywood;
+    padding: 1%;
+    border-radius: 3%;
+}
+
+#card:hover
+{
+    transform: scale(0.95);
+    background-color: rgb(177, 146, 106);
+}
+
+.card__photo
+{
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 4%;
+}
+
+.card__description
+{
+    max-width: 300px;
+    height: 60px;
+}
+
+.product
+{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.product__info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.title
+{
+    text-align: center;
+    font-size: 60px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.subtitle
+{
+    text-align: center;
+    font-size: 32px;
+    color:darkred;
+    margin-bottom: 30px;
+}
+
+.preparing
+{
+    width: 40%;
+}
+
+.wrapper
+{
+    display: flex;
+    justify-content: center;
+}
+
+.footer 
+{
+    margin-top: 30px;
+    padding: 32px 0;
+}
+
+.footer .flex-wrapper 
+{
+    height: 100%;
+    gap: 100px;
+}
+
+.footer__navigation 
+{
+    height: 100%;
+    width: 100%;
+}
+
+.footer__navigation-item 
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.footer__navigation-item a 
+{
+    font-family: "Inter";
+    font-size: 16px;
+    color:black;
+}
+
+.footer__navigation-item .flex-wrapper 
+{
+    gap: 12px;
+    height: 22px;
+    justify-content: unset;
+}
+
+.footer__title 
+{
+    margin: 0;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 20px;
+}

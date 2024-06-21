@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %}Catalog{% endblock %}
+{% block content %}
+<div class="flex-container">
+    <h1 class="headlines">The user sees:</h1> 
+    <button style="width: 150px; margin: 0" class="button" onclick="redirectToPage()">Add New</button> 
+    <script>
+        function redirectToPage() {
+            window.location.href = "/admin/add";
+        }
+    </script>
+</div> 
+<div class="cards">
+    {% for product in product_list %}
+        {% include "assortment/productCardEdit.html.twig" with product %}
+    {% endfor %}
+</div>    
+{% endblock %}

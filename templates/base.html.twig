@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+   <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+   <link rel="icon" href="/images/icon.ico" type="image/x-icon">
+   <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+</body>
+</html>

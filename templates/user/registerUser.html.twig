@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block title %}User registration{% endblock %}
+{% block content %}
+<h1 class="headlines">Join us!</h1>
+<form class="input-form" action="/user/register" method="post" enctype="multipart/form-data">
+    <div class="user-info">
+        <label class="input-label" for="first_name">First Name:</label>
+        <input class="input-data" name="first_name" id="first_name" type="text">
+    </div>
+    <div class="user-info">
+        <label class="input-label" for="last_name">Last Name:</label>
+        <input class="input-data" name="last_name" id="last_name" type="text">
+    </div>
+    <div class="user-info">
+        <label class="input-label" for="email">Email:</label>
+        <input class="input-data" name="email" id="email" type="text">
+    </div>
+    <div class="user-info">
+        <label class="input-label" for="phone">Phone:</label>
+        <input class="input-data" name="phone" id="phone" type="text">
+    </div>
+    <div class="user-info">
+        <label class="input-label" for="avatar_path">Avatar Path:</label>
+        <input class="input-data" name="avatar_path" id="avatar_path" type="file" accept="image/png, image/jpeg, image/gif">
+    </div>
+    <button class="button" type="submit">Submit</button>
+</form>
+{% endblock %}
