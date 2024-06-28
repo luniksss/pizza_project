@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block title %}Admin Profile{% endblock %}
+{% block content %}
+<h1 class="headlines">Вот вы:</h1>
+<div class="flex-container">
+    <img class="user-photo" src="/uploads/{{user.getAvatarPath()}}">
+    <div class="product__info">
+        <p class="input-label">Имя: {{ user.getFirstName() }}</p>
+        <p class="input-label">Фамилия: {{ user.getLastName() }}</p>
+        <p class="input-label">Email: {{ user.getEmail()}}</p>
+        <p class="input-label">Телефон: {{ user.getPhone()}}</p>
+    <div>
+    <div class="flex-container">
+        <a class="links" href="{{ path('admin') }}">
+            <button type="button" class="button small">Каталог</button>
+        </a>
+        <a class="links" href="{{ path('logOut') }}">
+            <button type="button" class="button small">Выйти</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

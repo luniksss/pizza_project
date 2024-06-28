@@ -128,6 +128,11 @@ input
     height: 100px;
 }
 
+#button-profile
+{
+    margin-top: 9%;
+}
+
 .links
 {
     text-decoration: none;

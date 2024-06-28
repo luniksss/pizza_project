@@ -3,7 +3,12 @@
 {% block content %}
 <div class="flex-container">
     <h1 class="headlines">Пользователь видит:</h1> 
-    <button style="width: 150px; margin: 0" class="button" onclick="redirectToPage()">Добавить новое</button> 
+    <div class="wrapper">
+        <button class="button small" onclick="redirectToPage()">Добавить новое</button> 
+        <a href="{{ path('view_user') }}">
+            <button id="button-profile" type="button" class="button small">Профиль</button>  
+        </a>
+    </div>
     <script>
         function redirectToPage() {
             window.location.href = "/admin/add";
