@@ -13,12 +13,18 @@ signup:
     controller: App\Controller\UserController::signUp
 
 register_user:
-    path: /user/register
+    path: /register
     controller: App\Controller\UserController::registerUser
     methods: POST
 
+# login -- check input data and send them to assortment menu
+login:
+    path: /login
+    controller: App\Controller\UserController::userAuthenticate
+    methods: POST
+    
 view_assortment:
-    path: /assortment/{id}
+    path: /assortment
     controller: App\Controller\StorefrontController::index
     methods: GET
 

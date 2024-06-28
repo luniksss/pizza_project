@@ -10,7 +10,9 @@ class User
         private string $lastName, 
         private string $email, 
         private ?string $phone, 
-        private ?string $avatarPath)
+        private string $role,
+        private ?string $avatarPath,
+        private string $password)
         {
         }
 
@@ -36,9 +38,21 @@ class User
         {
             return $this->phone;
         }
+
+        public function getRole(): string
+        {
+            return $this->role;
+        }
+        
         public function getAvatarPath(): ?string
         {
             return $this->avatarPath;
+        }
+
+    
+        public function getPassword(): string
+        {
+            return $this->password;
         }
 
         public function setFirstName(string $firstName): void
@@ -55,12 +69,19 @@ class User
         {
             $this->email = $email;
         }
+
         public function setPhone(string $phone): void
         {
             $this->phone = $phone;
         }
+
         public function setAvatarPath(string $avatarPath): void
         {
                 $this->avatarPath = $avatarPath;
+        }
+
+        public function setPassword(string $password): void
+        {
+            $this->password = $password;
         }
 }

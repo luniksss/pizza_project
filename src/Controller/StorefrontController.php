@@ -18,11 +18,11 @@ class StorefrontController extends AbstractController
        $this->imageService = $imageService;
     }
 
-    public function index(int $id): Response
+    public function index(): Response
     {
         $products = $this->productsService->list();
         return $this->render('assortment/allProducts.html.twig', [
-            'product_list' => $products, 'user_id' => $id
+            'product_list' => $products
          ]);
     }
 

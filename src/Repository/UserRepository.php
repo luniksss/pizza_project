@@ -23,10 +23,14 @@ class UserRepository
          $id]);
     }
 
+    public function findByEmail(string $email): ?User
+    {
+        return $this->repository->findOneBy(['email' => $email]);
+    }
+
     public function store(User $user): int
     {
         $this->em->persist($user);
-        
         $this->em->flush();
         return $user->getUserId();
     }
