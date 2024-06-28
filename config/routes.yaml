@@ -17,13 +17,17 @@ register_user:
     controller: App\Controller\UserController::registerUser
     methods: POST
 
-# login -- check input data and send them to assortment menu
+view_user:
+    path: /user
+    controller: App\Controller\UserController::viewUser
+    methods: GET
+
 login:
     path: /login
     controller: App\Controller\UserController::userAuthenticate
     methods: POST
     
-view_assortment:
+assortment:
     path: /assortment
     controller: App\Controller\StorefrontController::index
     methods: GET
@@ -56,3 +60,8 @@ delete_product:
     path: /admin/delete
     controller: App\Controller\StorefrontController::deleteProduct
     methods: POST
+
+logOut:
+    path: /logout
+    controller: App\Controller\SecurityController::logout
+    methods: GET

@@ -10,6 +10,7 @@ class UserData
     private string $lastName,  
     private string $email, 
     private ?string $phone, 
+    private string $role,
     private ?string $avatarPath)
    {
         $this->id = $id;
@@ -17,6 +18,7 @@ class UserData
         $this->lastName = $lastName;
         $this->email = $email;
         $this->phone = $phone;
+        $this->role = $role;
         $this->avatarPath = $avatarPath;
    }
 
@@ -34,14 +36,22 @@ class UserData
    {
        return $this->lastName;
    }
+
    public function getEmail(): string
    {
        return $this->email;
    }
+
    public function getPhone(): ?string
    {
        return $this->phone;
    }
+
+   public function getRole(): string
+   {
+       return $this->role;
+   }
+   
    public function getAvatarPath(): ?string
    {
        return $this->avatarPath;

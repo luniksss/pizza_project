@@ -3,6 +3,7 @@ namespace App\Service;
 use App\Repository\UserRepository;
 use App\Entity\User;
 use App\Entity\UserRole;
+use App\Service\Data\UserData;
 use App\Service\UserServiceInterface;
 
 class UserService implements UserServiceInterface
@@ -28,7 +29,6 @@ class UserService implements UserServiceInterface
             throw new \InvalidArgumentException("Role is not valid " . $role);
         }
 
-        var_dump($avatarPath);
         $user = new User(
             null, 
             $firstName, 
@@ -46,12 +46,25 @@ class UserService implements UserServiceInterface
         $existingUser = $this->userRepository->findByEmail($email);
         $checkPassword = $this->passwordHasher->hash($password);
         $rightPassword = $existingUser->getPassword();
-        var_dump($rightPassword, $checkPassword);
         if (($existingUser !== null) and ($checkPassword === $rightPassword))
         {
                 return $existingUser->getRole();
         }
         return 0;
+    }
+
+    public function viewUser($email): ?UserData
+    {
+        $user = $this->userRepository->findByEmail($email);
+        return ($user === null) ? null: new UserData(
+            $user->getUserId(),
+            $user->getFirstName(),
+            $user->getLastName(),
+            $user->getEmail(),
+            $user->getPhone(),
+            $user->getRole(),
+            $user->getAvatarPath(),
+        );
     }
 }
 ?>

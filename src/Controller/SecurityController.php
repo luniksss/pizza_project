@@ -5,6 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class SecurityController extends AbstractController
 {
@@ -15,7 +16,6 @@ class SecurityController extends AbstractController
              return $this->redirectToRoute('index');
         }
 
-        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
         return $this->render('/user/login.html.twig', [
@@ -23,8 +23,9 @@ class SecurityController extends AbstractController
         ]);
     }
 
-    public function logout(): void
+    public function logout(SessionInterface $session): Response
     {
-        $this->redirectToRoute('index');
+        $session->invalidate();
+        return $this->redirectToRoute('index');
     }
 }

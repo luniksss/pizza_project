@@ -26,9 +26,11 @@ class AddPizzaController extends AbstractController
     public function add(Request $request): Response
     {
         $avatarPath = $this->imageService->moveImageToUploads($request->files->get('picture'));
-        $this->productsService->add($request->get('name'), 
-        $request->get('description'),
-        $request->get('price'), $avatarPath);
+        $this->productsService->add(
+            $request->get('name'), 
+            $request->get('description'),
+            $request->get('price'), 
+            $avatarPath);
         
         return $this->redirectToRoute('admin', [], Response::HTTP_SEE_OTHER);    
     }

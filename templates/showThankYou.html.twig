@@ -3,6 +3,14 @@
 {% block content %}
 <h1 class="headlines">Миллион благодарностей за покупку! Уже начали готовить ...</h1> 
 <div class="wrapper">    
-    <img class="preparing" src="/gratitude.gif">
+    <img class="preparing" src="/images/gratitude.gif">
 </div>    
+<div class="product">
+    <a class="links" href="{{ path('assortment') }}">
+        <button type="button" class="button small">Заказать еще</button>
+    </a>
+    <a class="links" href="{{ path('logOut') }}">
+        <button type="button" class="button small">Выйти</button>
+    </a>
+</div>
 {% endblock %}

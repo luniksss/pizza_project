@@ -6,6 +6,7 @@ use App\Service\OrdersServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class OrderForm extends AbstractController
 {
@@ -27,9 +28,9 @@ class OrderForm extends AbstractController
          ]);
     }
 
-    public function placeOrder(Request $request): Response
+    public function placeOrder(Request $request, SessionInterface $session): Response
     {
-        $userId = intval($request->get('user_id'));
+        $userId = intval($session->get('user_id'));
         $pizzaId = intval($request->get('pizza_id'));
         $pizzaPrice = intval($request->get('price'));
         $this->ordersService->placeOrder(

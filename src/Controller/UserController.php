@@ -7,7 +7,7 @@ use App\Service\UserServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Security;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class UserController extends AbstractController
 {
@@ -45,20 +45,35 @@ class UserController extends AbstractController
         return $this->render('/user/login.html.twig');    
     }
 
-    public function userAuthenticate(Request $request): Response
+    public function userAuthenticate(Request $request, SessionInterface $session): Response
     {
         $email = $request->get('email');
         $password = $request->get('password');
         $exist = $this->userService->authentication($email, $password);
+        $user = $this->userService->viewUser($email);
+        $session->set('user_mail', $email);
+        $session->set('user_id', $user->getUserId());
         if ($exist === 1) {
-            $request->getSession()->set(Security::LAST_USERNAME, $email);
             return $this->redirect('/assortment');
         } elseif ($exist === 2) {
-            $request->getSession()->set(Security::LAST_USERNAME, $email);
             return $this->redirect('/admin');
         } else {
             return $this->render('/user/login.html.twig');   
         }
     }
 
+    public function viewUser(SessionInterface $session): Response
+    {
+        $email = $session->get('user_mail');
+        $user = $this->userService->viewUser($email);
+            if (!$user)
+            {
+                throw $this->createNotFoundException();
+            }
+    
+            return $this->render('user/userPage.html.twig', [
+                'user' => $user
+             ]);
+
+    }
 }

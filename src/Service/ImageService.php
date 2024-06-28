@@ -13,6 +13,7 @@ class ImageService implements ImageServiceInterface
         'image/png' => '.png',
         'image/webp' => '.webp',
         'image/gif' => '.gif',
+        'image/svg+xml' => '.svg',
     ];
 
     public function moveImageToUploads(UploadedFile $fileInfo): ?string

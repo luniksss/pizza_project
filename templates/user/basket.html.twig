@@ -1,22 +1,24 @@
 {% extends "base.html.twig" %}
 {% block title %}Order{% endblock %}
 {% block content %}
-<h1 class="headlines">Your choice:</h1>
-<form class="input-form" action="/order" method="post">
-    <div class="product">
-        <img src="pizza_images/{{ pizza_picture }}" alt="pizza">
-        <div class="product__info">
-            <p class="title">{{ pizza_name }}</p>
-            <p class="subtitle">{{ pizza_price }}₽</p>
+<h1 class="headlines">Супер! Вы выбрали:</h1>
+<div class="wrapper">
+    <form class="input-form" action="/order" method="post">
+        <div class="product">
+            <img src="/uploads/{{pizza_picture}}" alt="pizza">
+            <div class="product__info">
+                <p class="title">{{ pizza_name }}</p>
+                <p class="subtitle">{{ pizza_price }}₽</p>
+            </div>
         </div>
-    </div>
-    <div class="user-info">
-        <label class="input-label" for="address">Write your address:</label>
-        <input class="input-data" name="address" id="address" type="text">
-    </div>
-    <input type="hidden" name="user_id" value="{{ user_id }}">
-    <input type="hidden" name="pizza_id" value="{{ pizza_id }}">
-    <input type="hidden" name="price" value="{{ pizza_price}}">
-    <button class="button" type="submit">Hurry up!</button>
-</form>
+        <div class="user-info">
+            <label class="input-label" for="address">Адрес доставки: </label>
+            <input class="input-data" name="address" id="address" type="text">
+        </div>
+        <input type="hidden" name="user_id" value="{{ user_id }}">
+        <input type="hidden" name="pizza_id" value="{{ pizza_id }}">
+        <input type="hidden" name="price" value="{{ pizza_price}}">
+        <button class="button" type="submit">Поторопитесь!</button>
+    </form>
+</div>
 {% endblock %}

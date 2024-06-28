@@ -1,24 +1,26 @@
 {% extends "base.html.twig" %}
 {% block title %}Catalog{% endblock %}
 {% block content %}
-<h1 class="headlines">How do we want to make people happy?</h1>   
-<form class="input-form" action="/admin/register" method="post" enctype="multipart/form-data">
-    <div class="user-info">
-        <label class="input-label" for="name">Name:</label>
-        <input class="input-data" name="name" id="name" type="text">
-    </div>
-    <div class="user-info">
-        <label class="input-label" for="description">Description:</label>
-        <input class="input-data" name="description" id="description" type="text">
-    </div>
-    <div class="user-info">
-        <label class="input-label" for="price">Price:</label>
-        <input class="input-data" name="price" id="price" type="text">
-    </div>
-    <div class="user-info">
-        <label class="input-label" for="picture">Picture:</label>
-        <input class="input-data" name="picture" id="picture" type="file" accept="image/png, image/jpeg, image/gif">
-    </div>
-    <button class="button" type="submit">Add</button>
-</form>
+<h1 class="headlines">Чем мы собираемся делать людей счастливее?</h1>   
+<div class="wrapper">
+    <form class="input-form" action="/admin/register" method="post" enctype="multipart/form-data">
+        <div class="user-info">
+            <label class="input-label" for="name">Название:</label>
+            <input class="input-data" name="name" id="name" type="text">
+        </div>
+        <div class="user-info">
+            <label class="input-label" for="description">Описание:</label>
+            <input class="input-data" name="description" id="description" type="text">
+        </div>
+        <div class="user-info">
+            <label class="input-label" for="price">Цена:</label>
+            <input class="input-data" name="price" id="price" type="text">
+        </div>
+        <div class="user-info">
+            <label class="input-label" for="picture">Изображение:</label>
+            <input class="input-data" name="picture" id="picture" type="file" accept="image/png, image/jpeg, image/gif, image/svg+xml">
+        </div>
+        <button class="button" type="submit">Сделаем это!</button>
+    </form>
+</div>
 {% endblock %}
