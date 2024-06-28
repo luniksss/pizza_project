@@ -3,6 +3,15 @@ index:
     controller: App\Controller\UserController::index
     methods: GET
 
+signin:
+    path: /signin
+    controller: App\Controller\SecurityController::login
+    methods: POST
+    
+signup:
+    path: /signup
+    controller: App\Controller\UserController::signUp
+
 register_user:
     path: /user/register
     controller: App\Controller\UserController::registerUser

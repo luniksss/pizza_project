@@ -15,6 +15,7 @@
         <field name="email"  column="email" type="string" length="200" nullable="false" />
         <field name="phone"  column="phone" type="string" length="200" nullable="true" />
         <field name="avatarPath"  column="avatar_path" type="string" length="200" nullable="true" />
+        <!-- <field name="role" column="role" type="integer" /> -->
 
         <unique-constraint name="email_idx">
             <unique-column name="email"/>

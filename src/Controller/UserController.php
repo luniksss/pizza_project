@@ -20,8 +20,15 @@ class UserController extends AbstractController
 
     public function index(): Response
     {
+        // return $this->render('user/registerUser.html.twig');
+        return $this->render('/home.html.twig');
+    }
+
+    public function signUp(): Response
+    {
         return $this->render('user/registerUser.html.twig');
     }
+
 
     public function registerUser(Request $request): Response
     {

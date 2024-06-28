@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+{% block title %}Home page{% endblock %}
+{% block content %}
+<h1 class="headlines">Так хочешь кушать? Ничего, мы позаботимся об этом!</h1> 
+<div> 
+    <div class="wrapper">
+        <form action="/signin" method="post">
+            <button class="wrapper__button" type="submit"> Войти и заказать </button>
+        </form>
+        <form action="/signup" method="post">
+            <button class="wrapper__button" type="submit"> Зарегистрироваться и заказать </button>
+        </form>
+    </div>
+    <div class="distraction">
+        <img src="/pizza.gif">
+    </div>
+</div>    
+{% endblock %}

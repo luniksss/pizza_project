@@ -80,7 +80,7 @@ input
 
 .button
 {
-    background-color:coral;
+    background-color:rgb(202, 105, 70);
     width: 80%;
     font-size: 24px;
     color:aliceblue;
@@ -88,6 +88,26 @@ input
     margin-top: 5%;
     margin-left: 10%;
     border-radius: 7%;
+    font-family: "Inter";
+}
+
+.wrapper__button
+{
+    background-color:rgb(202, 105, 70);
+    width: 80%;
+    font-size: 24px;
+    color:aliceblue;
+    padding: 10px 0;
+    border-radius: 7%;
+    font-family: "Inter";
+}
+
+.links
+{
+    text-decoration: none;
+    outline: none;
+    font-size: 24px;
+    color:aliceblue;
     font-family: "Inter";
 }
 
@@ -166,6 +186,13 @@ input
 .preparing
 {
     width: 40%;
+}
+
+.distraction 
+{
+    display: flex;
+    justify-content: center;
+    opacity: 70%
 }
 
 .wrapper
