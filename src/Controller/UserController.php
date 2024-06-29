@@ -72,13 +72,12 @@ class UserController extends AbstractController
             {
                 throw $this->createNotFoundException();
             } elseif (intval($user->getRole()) === 2) {
-                return $this->render('user/adminPage.html.twig', [
+                return $this->render('admin/adminPage.html.twig', [
                     'user' => $user
                  ]);
             }
             return $this->render('user/userPage.html.twig', [
                 'user' => $user
              ]);
-
     }
 }
