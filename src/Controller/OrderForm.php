@@ -24,7 +24,11 @@ class OrderForm extends AbstractController
         $pizzaPrice = $request->get('price');
         $pizzaPic = $request->get('picture');
         return $this->render('user/basket.html.twig', [
-            'user_id' => $userId, 'pizza_id' => $pizzaId, 'pizza_name' => $pizzaName, 'pizza_price' => $pizzaPrice, 'pizza_picture' => $pizzaPic
+            'user_id' => $userId, 
+            'pizza_id' => $pizzaId, 
+            'pizza_name' => $pizzaName, 
+            'pizza_price' => $pizzaPrice, 
+            'pizza_picture' => $pizzaPic
          ]);
     }
 

@@ -42,15 +42,23 @@ class UserService implements UserServiceInterface
         return $this->userRepository->store($user);
     }
 
-    public function authentication(string $email, string $password): int {
-        $existingUser = $this->userRepository->findByEmail($email);
+    public function authentication(string $email, string $password): ?UserData {
+        $user = $this->userRepository->findByEmail($email);
+        $existingUser = new UserData(
+            $user->getUserId(),
+            $user->getFirstName(),
+            $user->getLastName(),
+            $user->getEmail(),
+            $user->getPhone(),
+            $user->getRole(),
+            $user->getAvatarPath(),);
         $checkPassword = $this->passwordHasher->hash($password);
-        $rightPassword = $existingUser->getPassword();
+        $rightPassword = $user->getPassword();
         if (($existingUser !== null) and ($checkPassword === $rightPassword))
         {
-                return $existingUser->getRole();
+                return $existingUser;
         }
-        return 0;
+        return null;
     }
 
     public function viewUser($email): ?UserData

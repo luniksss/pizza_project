@@ -17,12 +17,6 @@ class UserRepository
         $this->repository = $em->getRepository(User::class);
     }
 
-    public function findById($id): ?User
-    {
-        return $this->repository->findOneBy(['id' => (string)
-         $id]);
-    }
-
     public function findByEmail(string $email): ?User
     {
         return $this->repository->findOneBy(['email' => $email]);
@@ -33,12 +27,6 @@ class UserRepository
         $this->em->persist($user);
         $this->em->flush();
         return $user->getUserId();
-    }
-
-    public function delete(User $user): void
-    {
-        $this->em->remove($user);
-        $this->em->flush();
     }
 
     public function listAll(): array

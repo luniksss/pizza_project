@@ -49,15 +49,17 @@ class UserController extends AbstractController
     {
         $email = $request->get('email');
         $password = $request->get('password');
-        $exist = $this->userService->authentication($email, $password);
-        $user = $this->userService->viewUser($email);
+        $user = $this->userService->authentication($email, $password);
         $session->set('user_mail', $email);
         $session->set('user_id', $user->getUserId());
-        if ($exist === 1) {
+        if (intval($user->getRole()) === 1) 
+        {
             return $this->redirect('/assortment');
-        } elseif ($exist === 2) {
+        } elseif (intval($user->getRole()) === 2) 
+        {
             return $this->redirect('/admin');
-        } else {
+        } else 
+        {
             return $this->render('/user/login.html.twig');   
         }
     }

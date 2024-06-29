@@ -22,7 +22,6 @@ class OrdersService implements OrdersServiceInterface
             $pizzaName, 
             $pizzaPrice, 
             $address);
-
-        $orderId = $this->ordersRepository->store($order);    
+        $this->ordersRepository->store($order);    
     }
 }
